@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Final App Test Depresión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}" />
+    <script type="text/javascript" src="{% static 'core/js/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid">
+  
+        <br>
+        <br>
+  
+    {% if sumatorio < 14 %}
+        <h2 style="color: green; text-align: center;">Usted no padece depresión</h2>
+    {% elif sumatorio < 20 %}
+        <h2 style="color: yellow; text-align: center;">Usted padece depresión leve</h2>
+    {% elif sumatorio < 29 %}
+        <h2 style="color: orangered; text-align: center;">Usted padece depresión moderada</h2>
+    {% else %}
+        <h2 style="color: red; text-align: center;">Usted padece depresión grave</h2>
+        <br>
+        <h2 style="text-align: center;">Por favor, busque ayuda profesional </h2>
+    {% endif %}
+    <br>
+    
+  <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='http://localhost:8000/'">Volver a hacer el Test</button>
+  <br>
+  <br>
+  <h2 style="text-align: center;">¿Estás de acuerdo con el resultado?</h2>
+  <div class="bd-example">
+    <button type="button" class="btn btn-success btn-lg btn-block" onclick="location.href='http://localhost:8000/cuestionario/si'">Sí</button>
+    <button type="button" class="btn btn-danger btn-lg btn-block" onclick="location.href='http://localhost:8000/cuestionario/no'">No</button>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Final App Test Depresión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}" />
+    <script type="text/javascript" src="{% static 'core/js/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid">
+  
+        <br>
+        <br>
+  
+    <h1 style="text-align: center;">Tu respuesta ha sido <span style="color: blue;">{{respuesta}}</span></h1>
+    <br>
+    <h2 style="text-align: center;">{{auxsi|floatformat:2}}% de <span style="color: green;">Sí</span></h2>
+    <h2 style="text-align: center;">{{auxno|floatformat:2}}% de <span style="color: red;">No</span></h2>
+    <br>
+  <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='http://localhost:8000/'">Volver a hacer el Test</button>
+</div>
+</body>
+</html>

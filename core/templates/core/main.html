@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>App Test Depresión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}" />
+    <script type="text/javascript" src="{% static 'core/js/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+
+
+    <h2 id="form-controls">
+      <div>Test de Depresión: Pregunta {{id}}
+        <a class="anchorjs-link " href="#form-controls" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+      </div>
+    </h2>
+    {% if id != 1 %}
+    <form method="POST" action="{%url 'pregunta' id=siguiente %}">
+    {% else %}
+    <form method="POST" action="{%url 'pregunta' id=2 %}">
+    {% endif %}
+      <div class="form-group">{%csrf_token%}
+          <p>{{pregunta}}</p>
+          <br>
+        <textarea class="form-control" id="respuestahtml" name="respuestahtml" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success btn-lg btn-block" >Responder</button>
+      <button type="button" class="btn btn-danger btn-lg btn-block" onclick="location.href='http://localhost:8000/'">Cancelar Test
+      </button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

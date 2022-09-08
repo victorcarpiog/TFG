@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Inicio App Test Depresión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}" />
+    <script type="text/javascript" src="{% static 'core/js/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+
+
+    <h2 id="form-controls">
+      <div>Bienvenidos al <strong> Test de Depresión</strong>
+        <a class="anchorjs-link " href="#form-controls" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+      </div>
+      <h3>Por Victor Carpio</h3>
+      <h4>Este proyecto consiste en implementar el test de Beck para reconocer la depresión, consta de 21 preguntas que el usuario deberá de responder para conocer su resultado. <span style="color: red;">No está validado por profesionales.</span></h4>
+      
+    </h2>
+    <br>
+    <br>
+    <form>
+      <button type="button" class="btn btn-primary btn-lg btn-block" style="height:100px;" onclick="location.href='http://localhost:8000/pregunta/1'">Iniciar Test</button>
+      <button type="button" class="btn btn-danger btn-lg btn-block" onclick="location.href='http://www.google.com'">Salir
+      </button>
+      <br>
+      <h3 style="color: red;">Para que el modelo funcione correctamente, evite responder con monosílabos.</h3>
+      <br>
+      <h3 style="color: red;">Este test es una ayuda al diagnóstico, es preferible que busque ayuda profesional.</h3>
+    </form>
+  </div>
+</div>
+</body>
+</html>
